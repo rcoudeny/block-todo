@@ -1,0 +1,9 @@
+- login
+- todo object
+  - title
+  - description
+  - estimated duration (if null, drag and drop on calendar will default to 30 minutes)
+  - start time (If null, it's not planned yet)
+  - subtodos (start with just text, later can add plannable todo objects)
+- Calendar
+  - inplannen gebeurt via panel rechts met todos, en links calendar
