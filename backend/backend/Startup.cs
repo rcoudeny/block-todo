@@ -2,10 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Data;
+using backend.Data.Repos.Interfaces;
+using backend.Data.Repos.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,15 +32,24 @@ namespace backend
         {
 
             services.AddControllers();
+
+            services.AddDbContext<TodoContext>(options =>
+              options.UseSqlite(Configuration.GetConnectionString("TodoContext")));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "backend", Version = "v1" });
             });
+
+            services.AddScoped<TodoInitializer>();
+            services.AddScoped<ITodoItemRepository, TodoItemRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, TodoInitializer initializer)
         {
+            app.UseCors("Cors");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -54,6 +67,10 @@ namespace backend
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwaggerUI();
+
+            //initializer.InitializeData().Wait();
         }
     }
 }

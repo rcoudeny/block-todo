@@ -6,9 +6,21 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.7" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.7" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Data\Configurations\" />
+    <Folder Include="Data\Repos\" />
+    <Folder Include="Data\Repos\Interfaces\" />
+    <Folder Include="Data\Repos\Repositories\" />
+    <Folder Include="DTOs\Mappers\" />
   </ItemGroup>
 </Project>
