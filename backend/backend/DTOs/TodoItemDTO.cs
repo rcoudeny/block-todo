@@ -8,6 +8,7 @@ namespace backend.DTOs
         public String Duration { get; set; }
         public DateTime? StartTime { get; set; }
         public String SubTodos { get; set; }
+        public DateTime CreatedOn { get; set; }
 
         public TodoItemDTO()
         {

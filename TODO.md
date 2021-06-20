@@ -10,11 +10,13 @@
 
 
 1. Use store
-2. Connect to backend
-3. Improve layout TodoListView
-4. Calendar layout
+   1. Implement add method
+   2. Implement getAll method
+   3. Implement update method
+   4. Implement delete method
+2. Improve layout TodoListView while implementing above store
+3. Calendar layout
    1. Make calendar
    2. Make todo list draggable
    3. Make calendar droppable
    4. Add TodoItems to calendar based on startTime and duration
-   

@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace backend.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("api/todoitem")]
     [ApiController]
     public class TodoController : ControllerBase
     {
@@ -28,7 +28,7 @@ namespace backend.Controllers
         [HttpGet]
         public IEnumerable<TodoItemDTOWithId> GetAll()
         {
-            return TodoItemMapper.GetTodoItemDTOsWithIdFromTodoItems(_todoItemRepository.GetAll());
+            return TodoItemMapper.GetTodoItemDTOsWithIdFromTodoItems(_todoItemRepository.GetAll().OrderByDescending(todo => todo.CreatedOn));
         }
 
         [HttpGet("{guid}")]
@@ -53,6 +53,7 @@ namespace backend.Controllers
         public ActionResult<Guid> PostTodoItem(TodoItemDTO todoItemDTO)
         {
             TodoItem todoItemToCreate = TodoItemMapper.GetTodoItemFromTodoItemDTO(todoItemDTO);
+            todoItemToCreate.CreatedOn = DateTime.Now;
             _todoItemRepository.Add(todoItemToCreate);
             _todoItemRepository.SaveChanges();
             return todoItemToCreate.Id;

@@ -16,6 +16,9 @@ namespace backend.Models
             set { _duration = value == null ? null : TimeSpan.Parse(value); }
         }
         public DateTime? StartTime { get; set; }
+
+        [Required]
+        public DateTime CreatedOn { get; set; }
         public String SubTodos { get; set; }
 
         public TodoItem()

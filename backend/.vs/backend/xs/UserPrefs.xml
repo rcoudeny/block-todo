@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{1C399068-4F6F-4A9F-8DB4-428C19078917}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Models/TodoItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="backend/DTOs/Mappers/TodoItemMapper.cs">
     <Files>
-      <File FileName="backend/Startup.cs" Line="68" Column="44" />
-      <File FileName="backend/Data/Repos/Repositories/TodoItemRepository.cs" Line="30" Column="1" />
-      <File FileName="backend/Controllers/TodoController.cs" Line="31" Column="100" />
-      <File FileName="backend/DTOs/Mappers/TodoItemMapper.cs" Line="29" Column="83" />
-      <File FileName="backend/Models/TodoItem.cs" Line="1" Column="1" />
+      <File FileName="backend/Startup.cs" Line="74" Column="1" />
+      <File FileName="backend/Data/Repos/Repositories/TodoItemRepository.cs" Line="28" Column="26" />
+      <File FileName="backend/Controllers/TodoController.cs" Line="29" Column="38" />
+      <File FileName="backend/Models/TodoItem.cs" Line="20" Column="18" />
+      <File FileName="backend/DTOs/TodoItemDTO.cs" Line="11" Column="48" />
+      <File FileName="backend/DTOs/Mappers/TodoItemMapper.cs" Line="37" Column="49" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,11 +21,11 @@
                 </Node>
               </Node>
               <Node name="DTOs" expanded="True">
-                <Node name="Mappers" expanded="True" />
+                <Node name="Mappers" expanded="True">
+                  <Node name="TodoItemMapper.cs" selected="True" />
+                </Node>
               </Node>
-              <Node name="Models" expanded="True">
-                <Node name="TodoItem.cs" selected="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>

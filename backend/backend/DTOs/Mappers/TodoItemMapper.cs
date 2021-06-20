@@ -46,6 +46,7 @@ namespace backend.DTOs.Mappers
                 Description = todoItem.Description,
                 Duration = todoItem.Duration,
                 StartTime = todoItem.StartTime,
+                CreatedOn = todoItem.CreatedOn,
                 SubTodos = todoItem.SubTodos
             };
         }
@@ -59,6 +60,7 @@ namespace backend.DTOs.Mappers
                 Description = todoItem.Description,
                 Duration = todoItem.Duration,
                 StartTime = todoItem.StartTime,
+                CreatedOn = todoItem.CreatedOn,
                 SubTodos = todoItem.SubTodos
             };
         }
