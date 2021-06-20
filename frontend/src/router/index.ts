@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
-import TodoList from "../views/TodoList.vue";
+import TodoListView from "../views/TodoListView.vue";
 import Calendar from "../views/Calendar.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/todolist",
     name: "TodoList",
-    component: TodoList
+    component: TodoListView
   },
   {
     path: "/calendar",
