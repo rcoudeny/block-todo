@@ -74,7 +74,7 @@ namespace backend
 
             app.UseSwaggerUI();
 
-            initializer.InitializeData().Wait();
+            //initializer.InitializeData().Wait();
         }
     }
 }

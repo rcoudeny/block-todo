@@ -25,17 +25,17 @@ namespace backend.Data.Repos.Repositories
 
         public IEnumerable<TodoItem> GetAll()
         {
-            return _todos;
+            return _todos.OrderByDescending(todo => todo.CreatedOn);
         }
 
         public IEnumerable<TodoItem> GetTodoItemsBetweenDates(DateTime start, DateTime end)
         {
-            return _todos.Where(todo => todo.StartTime > start && todo.StartTime < end);
+            return _todos.Where(todo => todo.StartTime > start && todo.StartTime < end).OrderByDescending(todo => todo.CreatedOn);
         }
 
         public IEnumerable<TodoItem> GetUnplannedTodoItems()
         {
-            return _todos.Where(todo => todo.StartTime == null);
+            return _todos.Where(todo => todo.StartTime == null).OrderByDescending(todo => todo.CreatedOn);
         }
 
         public void Add(TodoItem todoItem)

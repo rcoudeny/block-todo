@@ -28,7 +28,7 @@ namespace backend.Controllers
         [HttpGet]
         public IEnumerable<TodoItemDTOWithId> GetAll()
         {
-            return TodoItemMapper.GetTodoItemDTOsWithIdFromTodoItems(_todoItemRepository.GetAll().OrderByDescending(todo => todo.CreatedOn));
+            return TodoItemMapper.GetTodoItemDTOsWithIdFromTodoItems(_todoItemRepository.GetAll());
         }
 
         [HttpGet("{guid}")]
@@ -38,15 +38,15 @@ namespace backend.Controllers
         }
 
         [HttpGet("planned/{startTime}/{endTime}")]
-        public IEnumerable<TodoItemBulkDTO> GetPlannedTodoItemBulkDTOs(DateTime? startTime, DateTime? endTime)
+        public IEnumerable<TodoItemDTOWithId> GetPlannedTodoItemBulkDTOs(DateTime? startTime, DateTime? endTime)
         {
-            return TodoItemMapper.GetTodoItemBulkDTOs(_todoItemRepository.GetTodoItemsBetweenDates(startTime == null ? DateTime.MinValue : (DateTime)startTime, endTime == null ? DateTime.MaxValue : (DateTime)endTime));
+            return TodoItemMapper.GetTodoItemDTOsWithIdFromTodoItems(_todoItemRepository.GetTodoItemsBetweenDates(startTime == null ? DateTime.MinValue : (DateTime)startTime, endTime == null ? DateTime.MaxValue : (DateTime)endTime));
         }
 
         [HttpGet("unplanned")]
-        public IEnumerable<TodoItemBulkDTO> GetUnplannedTodoItemBulkDTOs()
+        public IEnumerable<TodoItemDTOWithId> GetUnplannedTodoItemBulkDTOs()
         {
-            return TodoItemMapper.GetTodoItemBulkDTOs(_todoItemRepository.GetUnplannedTodoItems());
+            return TodoItemMapper.GetTodoItemDTOsWithIdFromTodoItems(_todoItemRepository.GetUnplannedTodoItems());
         }
 
         [HttpPost]

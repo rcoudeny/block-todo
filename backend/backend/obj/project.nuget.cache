@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zCEV1DfOTDS2zHjXrrL7Lm4vzgDh5ikK1Cj0SlhIOki54j2+s6t05eJNaNt3Jz025tQFUAdAT+ZOB2U59jffYw==",
+  "dgSpecHash": "iOonKZUHR8sueo1x+HNbzWhWduRKzr3kJcMluMYXKMkbe4NH8CRYe8vAMKlBEfaadT5SRJE5hKs99UXQwM8jSA==",
   "success": true,
-  "projectFilePath": "/Users/robbe/Projects/block todo/backend/backend/backend.csproj",
+  "projectFilePath": "/Users/robbe/Projects/blockTodo/backend/backend/backend.csproj",
   "expectedPackageFiles": [
     "/Users/robbe/.nuget/packages/entityframework/6.1.0/entityframework.6.1.0.nupkg.sha512",
     "/Users/robbe/.nuget/packages/microsoft.aspnet.identity.core/2.2.3/microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",

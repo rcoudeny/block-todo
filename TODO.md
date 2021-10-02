@@ -6,6 +6,7 @@
   - start time (If null, it's not planned yet)
   - subtodos (start with just text, later can add plannable todo objects)
 - Calendar
+  - TodoItemComponent moet een non editable versie hebben
   - inplannen gebeurt via panel rechts met todos, en links calendar
 
 
@@ -16,7 +17,8 @@
    4. Implement delete method
 2. Improve layout TodoListView while implementing above store
 3. Calendar layout
-   1. Make calendar
-   2. Make todo list draggable
-   3. Make calendar droppable
-   4. Add TodoItems to calendar based on startTime and duration
+   1. Add non editable TodoItemComponent
+   2. Make calendar
+   3. Make todo list draggable
+   4. Make calendar droppable
+   5. Add TodoItems to calendar based on startTime and duration

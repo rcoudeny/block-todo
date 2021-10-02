@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/robbe/Projects/block todo/backend/backend/backend.csproj": {}
+    "/Users/robbe/Projects/blockTodo/backend/backend/backend.csproj": {}
   },
   "projects": {
-    "/Users/robbe/Projects/block todo/backend/backend/backend.csproj": {
+    "/Users/robbe/Projects/blockTodo/backend/backend/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/robbe/Projects/block todo/backend/backend/backend.csproj",
+        "projectUniqueName": "/Users/robbe/Projects/blockTodo/backend/backend/backend.csproj",
         "projectName": "backend",
-        "projectPath": "/Users/robbe/Projects/block todo/backend/backend/backend.csproj",
+        "projectPath": "/Users/robbe/Projects/blockTodo/backend/backend/backend.csproj",
         "packagesPath": "/Users/robbe/.nuget/packages/",
-        "outputPath": "/Users/robbe/Projects/block todo/backend/backend/obj/",
+        "outputPath": "/Users/robbe/Projects/blockTodo/backend/backend/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
         }
       }
     }
