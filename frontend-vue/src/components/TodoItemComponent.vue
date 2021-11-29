@@ -34,13 +34,20 @@
 			</svg>
 		</div>
 	</div>
-	<div v-else class="todoItemComponent viewMode container">
-		<h3>{{ todoItem.title }}</h3>
-		<p>{{ todoItem.description }}</p>
+	<div
+		v-else
+		class="todoItemComponent viewMode container"
+		draggable="true"
+		v-on:dragstart="dragStart"
+		v-on:drag="dragging"
+	>
+		<h3 class="todoItemTitle">{{ todoItem.title }}</h3>
+		<p class="todoItemDescription">{{ todoItem.description }}</p>
 	</div>
 </template>
 
 <script lang="ts">
+
 import { TodoItem } from "@/models/TodoItem";
 import { Options, Vue } from "vue-class-component";
 import { DELETE_TODO_ITEM, UPDATE_TODO_ITEM } from "../store/actions.type";
@@ -53,6 +60,15 @@ import { DELETE_TODO_ITEM, UPDATE_TODO_ITEM } from "../store/actions.type";
 		isEditable: Boolean,
 	},
 	methods: {
+		dragStart: function (event: DragEvent): void {
+			if (event.dataTransfer) {
+				event.dataTransfer.setData("text/plain", this.todoItem.id);
+				console.log(event);
+			}
+		},
+		dragging: function (event: Event): void {
+			// console.log(event);
+		},
 		unfocus: function (event: KeyboardEvent): void {
 			if (event && event.target && event.key === "Enter") {
 				(event.target as HTMLInputElement).blur();
@@ -72,34 +88,39 @@ export default class TodoItemComponent extends Vue {}
 <style lang="less" scoped>
 .todoItemComponent {
 	position: relative;
-	width: 100%;
 	margin: 0.6rem;
 	text-align: left;
 	background-color: var(--periwinkle-crayola);
 }
-.editMode .container {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	.todoItemTitle {
-		height: 2rem;
-		width: calc(100% - 2rem);
-		display: block;
-		font-size: 1.17em;
-		margin-inline-start: 0px;
-		margin-inline-end: 0px;
-		font-weight: bold;
+.editMode {
+	.container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		.todoItemTitle {
+			height: 2rem;
+			width: calc(100% - 2rem);
+			display: block;
+			font-size: 1.17em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			font-weight: bold;
+		}
+		.todoItemDescription {
+			height: 10rem;
+			overflow: auto;
+			// width: 100%;
+			font-weight: inherit;
+			font-family: inherit;
+			overflow-y: scroll;
+			resize: none;
+		}
 	}
-	.todoItemDescription {
-		height: 10rem;
-		overflow: auto;
-		// width: 100%;
-		font-weight: inherit;
-		font-family: inherit;
-		overflow-y: scroll;
-		resize: none;
-	}
+}
+.viewMode {
+	cursor: move;
+	user-select: none;
 }
 .deleteButton {
 	position: absolute;
@@ -108,6 +129,11 @@ export default class TodoItemComponent extends Vue {}
 	cursor: pointer;
 	width: 1rem;
 	height: 1rem;
+}
+.todoItemTitle,
+.todoItemDescription {
+	margin-block: 0;
+	margin: 5px;
 }
 input,
 textarea {
